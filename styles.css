@@ -1,0 +1,223 @@
+/* Estilos generales */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --pwhite: #fcfcfc;
+  --white: #f0eaea;
+  --font: "Raleway", sans-serif;
+  --yellow: #f9e79f;
+  --dpurple: #af7ac5;
+  --lpurple: #d7bde2;
+  --black: #333;
+}
+
+body {
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.logo {
+  scale: 2;
+  transition: scale 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.logo:hover {
+  scale: 2.04;
+}
+
+/* Estilos para el encabezado */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--pwhite);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  max-height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--yellow);
+}
+
+/* Estilos para las secciones */
+.hero-section,
+.benefits-section,
+.testimonials-section {
+  padding: 50px;
+  display: flex;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd; /* Puedes cambiar este color por el que prefieras */
+}
+
+.hero-shot-container,
+.titles-container {
+  width: 50%;
+}
+
+.hero-shot-container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-shot-container .placeholder {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.titles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  margin-left: 20px;
+}
+
+.titles-container h1,
+.titles-container p {
+  transition: font-size 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.titles-container h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.titles-container p {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+/* Efecto gooey button */
+.gooey-btn {
+  display: inline-block;
+  text-align: center;
+  background: var(--white);
+  color: var(--dpurple);
+  font-weight: bold;
+  padding: 1.18em 1.32em 1.03em;
+  line-height: 1;
+  border-radius: 1em;
+  position: relative;
+  min-width: 8.23em;
+  text-decoration: none;
+  font-size: 1.6rem;
+  overflow: hidden;
+
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.gooey-btn:hover {
+  border: solid 2px var(--pwhite);
+  color: var(--white);
+  background: none;
+  border-radius: 16px;
+}
+/* FIn efecto gooey */
+
+.cta-btn:hover {
+  background-color: var(--lpurple);
+  color: var(--black);
+}
+
+/* Estilos para las tarjetas de beneficios y testimonios */
+.benefits-container,
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.benefit-card,
+.testimonial-card {
+  width: calc(33.33% - 20px);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el footer */
+footer {
+  padding: 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.about {
+  margin-bottom: 20px;
+}
+
+.about h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  padding: 15px 30px;
+  background-color: #c39bd3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.background-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(-1) translateY(0);
+  z-index: -1;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
