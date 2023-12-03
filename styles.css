@@ -16,8 +16,25 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  background: var(--white);
+}
+/* Estilos de la barra de desplazamiento */
+body::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
 }
 
+body::-webkit-scrollbar-thumb {
+  background-color: var(
+    --dpurple
+  ); /* Color del fondo del "pulgón" de la barra de desplazamiento */
+  border-radius: 8px; /* Redondea las esquinas del "pulgón" */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(
+    --white
+  ); /* Color del fondo de la barra de desplazamiento */
+}
 .logo {
   scale: 2;
   transition: scale 0.3s ease, margin-bottom 0.3s ease;
@@ -86,15 +103,23 @@ nav ul li a:hover {
 }
 
 .hero-shot-container {
+  position: relative;
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-shot-container .placeholder {
-  max-width: 100%;
-  max-height: 100%;
+.hero-shot-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--lpurple) center/cover no-repeat; /* Ajusta la ruta de la imagen según tu estructura de carpetas */
+  filter: blur(100px);
+  z-index: -1;
 }
 
 .titles-container {
@@ -161,9 +186,9 @@ nav ul li a:hover {
 /* Estilos para las tarjetas de beneficios y testimonios */
 .benefits-container,
 .testimonials-container {
+  overflow-x: hidden;
+  white-space: nowrap;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .benefit-card,
@@ -220,4 +245,71 @@ footer {
   transform: scaleX(-1) translateY(0);
   z-index: -1;
   transition: transform 0.5s ease, filter 0.5s ease;
+}
+/* Estilos para la sección de testimonios y el carrusel */
+.testimonials-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.testimonials-carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 250px; /* Puedes ajustar este ancho según tus necesidades */
+  margin-right: 20px;
+  white-space: normal;
+}
+
+.testimonial-card img {
+  width: 100%;
+  border-radius: 50%; /* Para crear la imagen circular */
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.testimonial-comment {
+  font-style: italic;
+}
+/* Estilos para las flechas de navegación */
+/* Estilos para las flechas de navegación */
+.arrow {
+  position: absolute;
+  transform: translateY(100%);
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: none;
+  color: var(--dpurple);
+  border-radius: 50%;
+  padding: 15px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 0.3s;
+  line-height: 1; /* Ajusta el valor para centrar mejor el texto */
+  user-select: none; /* Evita la selección del texto */
+}
+
+.arrow:hover {
+  background: var(--dpurple);
+  color: var(--pwhite);
+}
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
 }
