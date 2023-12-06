@@ -82,7 +82,6 @@ nav ul li a {
 nav ul li a:hover {
   color: var(--yellow);
 }
-
 /* Estilos para las secciones */
 .hero-section,
 .benefits-section,
@@ -315,7 +314,7 @@ footer {
 .testimonial-comment {
   font-style: italic;
 }
-/* Estilos para las flechas de navegación */
+/* Fin carrusel */
 /* Estilos para las flechas de navegación */
 .arrow {
   position: absolute;
@@ -346,4 +345,23 @@ footer {
 
 .arrow-right {
   right: 10px;
+}
+.about-content{
+  font-size: 10px;
+}
+.social-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-btn {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px;
+  color: var(--white); /* Color de los íconos */
+  transition: color 0.3s ease-in-out;
+}
+
+.social-btn:hover {
+  color: var(--yellow); /* Cambia el color al pasar el mouse sobre el botón de Facebook */
 }
